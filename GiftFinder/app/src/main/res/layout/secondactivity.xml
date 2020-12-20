@@ -1,0 +1,33 @@
+<?xml version="1.0" encoding="utf-8"?>
+<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:paddingLeft="16dp"
+    android:paddingRight="16dp"
+    android:background="@color/kırmızı"
+    android:orientation="vertical" >
+
+    <TextView
+        android:id="@+id/textView3"
+        android:layout_width="245dp"
+        android:layout_height="38dp"
+        android:text="@string/soru1"
+        android:textSize="16dp"
+        android:textStyle="bold|italic"
+        android:layout_marginTop="100dp"
+        android:layout_marginLeft="50dp"
+        ></TextView>
+
+
+    <Spinner
+        android:id="@+id/spinner"
+        android:layout_width="332dp"
+        android:layout_height="68dp"
+        android:textSize="16dp"
+        android:textStyle="bold|italic"
+        android:layout_marginLeft="20dp"
+        android:layout_marginTop="50dp"></Spinner>
+
+
+
+</LinearLayout>

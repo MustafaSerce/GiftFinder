@@ -1,0 +1,56 @@
+<resources>
+    <string name="app_name">Proje</string>
+    <string name="soru1">Hediyenizi Kim İçin Alıyorsunuz?</string>
+    <string name="soru2">Cinsiyet</string>
+    <string name="soru3">Yaş Aralığı</string>
+    <string name="soru4">Hoşuna Gidebileceği Şey Nedir ?</string>
+    <string name="soru5">Fiyat Aralığınız Nedir?</string>
+    <string name="HediyeniBul">Hediyeni Bul</string>
+    <string name="Hatırlaticiolustur">Hatırlatıcı Oluştur</string>
+    <string name="Devam_et">Devam Et</string>
+    <string name="Welcome">Hediyeni Seç</string>
+
+    <string-array name="Cevap1">
+        <item>Cevap için Tıklayınız</item>
+        <item>Aile</item>
+        <item>Arkadaş</item>
+        <item>Eş</item>
+        <item>Diğer</item>
+    </string-array>
+    <string-array name="Cevap2">
+        <item>Cevap İçin Tıklayınız</item>
+        <item>Erkek</item>
+        <item>Kadın</item>
+    </string-array>
+    <string-array name="Cevap3">
+        <item>Cevap için Tıklayınız</item>
+        <item>0-5</item>
+        <item>5-10</item>
+        <item>11-20</item>
+        <item>21-30</item>
+        <item>31-40</item>
+        <item>41-60</item>
+        <item>65-100</item>
+
+    </string-array>
+    <string-array name="Cevap4">
+        <item>Cevap için Tıklayınız</item>
+        <item>Spor</item>
+        <item>Film</item>
+        <item>Müzik</item>
+        <item>Alışveriş</item>
+        <item>Oyun</item>
+
+    </string-array>
+    <string-array name="cevap5">
+        <item>Cevap için Tıklayınız</item>
+        <item>0-100 TL</item>
+        <item>100-500 TL</item>
+        <item>500-1000 TL</item>
+        <item>1000-5000 TL</item>
+        <item>5000-10000 TL</item>
+        <item>Para Mühim Değil</item>
+
+    </string-array>
+
+</resources>

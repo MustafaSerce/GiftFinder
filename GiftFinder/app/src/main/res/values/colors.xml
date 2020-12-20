@@ -1,0 +1,9 @@
+<?xml version="1.0" encoding="utf-8"?>
+<resources>
+    <color name="colorPrimary">#6200EE</color>
+    <color name="colorPrimaryDark">#504D55</color>
+    <color name="colorAccent">#EC7D8D</color>
+    <color name="kırmızı">#FFEC7D8D</color>
+    <color name="mor">#FF7F1193</color>
+    <color name="gri">#3C3A40</color>
+</resources>
