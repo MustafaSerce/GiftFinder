@@ -19,6 +19,8 @@
         </activity>
         <activity android:name=".SecondActivity"/>
         <activity android:name=".ThirdActivity"/>
+        <activity android:name=".Hatirlatici"/>
+        <activity android:name=".Orginal" />
     </application>
 
 </manifest>

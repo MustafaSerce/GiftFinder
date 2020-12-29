@@ -1,6 +1,7 @@
 package com.example.proje;
 
 import androidx.appcompat.app.AppCompatActivity;
+import androidx.fragment.app.FragmentManager;
 
 import android.content.Intent;
 import android.os.Bundle;
@@ -10,6 +11,7 @@ import android.widget.Button;
 public class MainActivity extends AppCompatActivity {
 
     Button btnbul,btnhatir;
+
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
@@ -17,10 +19,18 @@ public class MainActivity extends AppCompatActivity {
         btnbul = findViewById(R.id.btnbul);
         btnhatir=findViewById(R.id.btnhatir);
 
+
         btnbul.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View v) {
                 Intent gec = new Intent(MainActivity.this, SecondActivity.class);
+                startActivity(gec);
+            }
+        });
+        btnhatir.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View v) {
+                Intent gec = new Intent(MainActivity.this,Hatirlatici.class);
                 startActivity(gec);
             }
         });

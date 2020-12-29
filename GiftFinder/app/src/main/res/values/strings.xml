@@ -7,8 +7,12 @@
     <string name="soru5">Fiyat Aralığınız Nedir?</string>
     <string name="HediyeniBul">Hediyeni Bul</string>
     <string name="Hatırlaticiolustur">Hatırlatıcı Oluştur</string>
+    <string name="tarihekle">Tarih Ekleyiniz</string>
     <string name="Devam_et">Devam Et</string>
     <string name="Welcome">Hediyeni Seç</string>
+    <string name="hatirlaticiisim">İsim</string>
+    <string name="hatirlaticiekle">Listeye Kaydet</string>
+    <string name="listeyigör">Listeyi Gör</string>
 
     <string-array name="Cevap1">
         <item>Cevap için Tıklayınız</item>
@@ -52,5 +56,7 @@
         <item>Para Mühim Değil</item>
 
     </string-array>
+    <!-- TODO: Remove or change this placeholder text -->
+    <string name="hello_blank_fragment">Hello blank fragment</string>
 
 </resources>
