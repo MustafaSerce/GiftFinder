@@ -37,6 +37,7 @@ public static int p ;
         adapter.setDropDownViewResource(android.R.layout.simple_spinner_dropdown_item);
         spinner.setAdapter(adapter);
 
+
         spinner.setOnItemSelectedListener(this);
 
 
@@ -49,6 +50,7 @@ public static int p ;
         int tx = (int) position;
 
 
+
 int y = spinner.getCount();
 
        if ((y==5)&&((tx == 1 ) || (tx==2)||(tx==3)||(tx==4)||(tx==5))){
@@ -58,6 +60,7 @@ int y = spinner.getCount();
                    R.array.Cevap2, android.R.layout.simple_spinner_item);
            adapter.setDropDownViewResource(android.R.layout.simple_spinner_dropdown_item);
            spinner.setAdapter(adapter);
+
 
         }
        else if ((y==3)&&((tx == 1 ) || (tx==2)||(tx==3))){

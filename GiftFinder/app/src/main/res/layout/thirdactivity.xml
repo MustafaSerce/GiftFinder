@@ -7,16 +7,14 @@
     android:layout_height="match_parent"
     android:background="@color/kırmızı">
 
-    <TextView
-        android:id="@+id/textView4"
-        android:layout_width="235dp"
-        android:layout_height="113dp"
-        android:text="Hediyelerin Gösterileceği Sayfa"
-        android:textSize="16dp"
-        android:textStyle="bold|italic"
+
+    <androidx.recyclerview.widget.RecyclerView
+        android:id="@+id/rw2"
+        android:layout_width="match_parent"
+        android:layout_height="match_parent"
         app:layout_constraintBottom_toBottomOf="parent"
         app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintTop_toTopOf="parent" />
+        app:layout_constraintTop_toTopOf="parent"/>
 
 </androidx.constraintlayout.widget.ConstraintLayout>
