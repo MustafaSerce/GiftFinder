@@ -11,6 +11,7 @@ import androidx.room.RoomDatabase;
 public class Hatirlatici extends AppCompatActivity {
     public static FragmentManager fragmentManager;
     public static UserDb userDb;
+
     @Override
     protected void onCreate(@Nullable Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
@@ -24,5 +25,7 @@ public class Hatirlatici extends AppCompatActivity {
             fragmentManager.beginTransaction().add(R.id.fragment_container,new HomeFragment()).commit();
         }
         userDb = Room.databaseBuilder(getApplicationContext(),UserDb.class,"UserDb").allowMainThreadQueries().build();
+
+
     }
 }

@@ -16,14 +16,12 @@ public interface UserDao {
     @Query("Select user_name from users")
     public String[] getUsers();
 
-   // @Query("Select user_name from users")
-   // public ArrayAdapter<CharSequence> getUsers1();
+
 
     @Query("Select user_date from users")
     public String[] getsUsers();
 
-   // @Query("Select user_date from users")
-    //public ArrayAdapter<CharSequence> getsUsers1();
+
 
     @Query("Select id from users")
     public int[] getssUsers();

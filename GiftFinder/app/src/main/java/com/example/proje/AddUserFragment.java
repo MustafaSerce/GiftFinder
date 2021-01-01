@@ -95,13 +95,14 @@ private  TextView txtwc;
                 tarhitxt.setText(sonuc2);
 
 
-                long diffInMillisec =c.getTimeInMillis()+ - +cx.getTimeInMillis();
+                long diffInMillisec =cx.getTimeInMillis() - c.getTimeInMillis();
                 long diffInDays = TimeUnit.MILLISECONDS.toDays(diffInMillisec);
                 long diffInHours = TimeUnit.MILLISECONDS.toHours(diffInMillisec);
                 long diffInMin = TimeUnit.MILLISECONDS.toMinutes(diffInMillisec);
                 long diffInSec = TimeUnit.MILLISECONDS.toSeconds(diffInMillisec);
                 final String cıktı2 = String.format("%S",diffInMillisec);
                 txtwc.setText(cıktı2);
+                int pushtime = (int) diffInMillisec;
 
                 //FARK 604800000 (7 GÜN) oldugunda pushlayacak.
             }
