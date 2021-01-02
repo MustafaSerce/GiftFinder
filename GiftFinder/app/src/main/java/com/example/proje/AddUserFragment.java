@@ -1,37 +1,21 @@
 package com.example.proje;
 
 import android.app.DatePickerDialog;
-import android.content.Context;
 import android.graphics.Color;
 import android.graphics.drawable.ColorDrawable;
 import android.os.Bundle;
-
-import androidx.annotation.Nullable;
-import androidx.fragment.app.Fragment;
-
-import android.text.style.TtsSpan;
-import android.text.style.TtsSpan.TimeBuilder;
-import android.transition.Scene;
-import android.util.Log;
-import android.view.Gravity;
 import android.view.LayoutInflater;
-import android.view.MotionEvent;
 import android.view.View;
 import android.view.ViewGroup;
 import android.widget.Button;
-import android.widget.CalendarView;
 import android.widget.DatePicker;
 import android.widget.EditText;
 import android.widget.TextView;
 import android.widget.Toast;
 
-import java.sql.Date;
-import java.text.DateFormat;
-import java.text.ParseException;
-import java.text.SimpleDateFormat;
-import java.time.ZonedDateTime;
+import androidx.fragment.app.Fragment;
+
 import java.util.Calendar;
-import java.util.List;
 import java.util.concurrent.TimeUnit;
 
 
@@ -59,6 +43,10 @@ private  TextView txtwc;
         nametxt = view.findViewById(R.id.nametxt);
         tarhitxt = view.findViewById(R.id.tarihtxt);
         txtwc = view.findViewById(R.id.txtwc);
+
+
+
+
 
 
         final StringBuilder sonuc2 = new StringBuilder();
@@ -139,5 +127,4 @@ private  TextView txtwc;
     }
 
 
-
-}
+    }
