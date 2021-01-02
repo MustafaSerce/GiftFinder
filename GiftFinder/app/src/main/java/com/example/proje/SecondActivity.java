@@ -2,23 +2,34 @@ package com.example.proje;
 
 import android.annotation.SuppressLint;
 import android.content.Intent;
+import android.content.SharedPreferences;
 import android.os.Bundle;
+import android.util.Log;
 import android.util.Range;
 import android.view.MotionEvent;
 import android.view.View;
 import android.widget.AdapterView;
 import android.widget.ArrayAdapter;
 import android.widget.Button;
+import android.widget.LinearLayout;
 import android.widget.Spinner;
 import android.widget.TextView;
 import android.widget.Toast;
 
 import androidx.appcompat.app.AppCompatActivity;
 
+import com.huawei.hms.ads.AdListener;
+import com.huawei.hms.ads.AdParam;
+import com.huawei.hms.ads.BannerAdSize;
+import com.huawei.hms.ads.HwAds;
+import com.huawei.hms.ads.InterstitialAd;
+import com.huawei.hms.ads.banner.BannerView;
 
 
 public class SecondActivity extends AppCompatActivity implements AdapterView.OnItemSelectedListener{
 
+    InterstitialAd interstitialAd;
+    SharedPreferences myPreferences;
 TextView textView3;
 Spinner spinner;
 public static int p ;
@@ -30,6 +41,24 @@ public static int p ;
         textView3= findViewById(R.id.textView3);
 
 
+
+        // HMS Ads Servinin tetikliyoruz.
+        HwAds.init(this);
+
+        // Banner Ad example
+
+
+        myPreferences = getSharedPreferences("my_setting", MODE_PRIVATE);
+        increaseCounterValue();
+        Toast.makeText(this, getCounterValue() + " kez actınız...", Toast.LENGTH_SHORT).show();
+        if(getCounterValue() == 3) {
+            interstitialAd = new InterstitialAd(this);
+            interstitialAd.setAdId("testw6vs28auh3");
+            interstitialAd.setAdListener(adListener);
+
+            loadBannerAd();
+            setCounterValue(0);
+        }
         spinner = findViewById(R.id.spinner);
         ArrayAdapter<CharSequence> adapter = ArrayAdapter.createFromResource(this,
                 R.array.Cevap1, android.R.layout.simple_spinner_item);
@@ -38,6 +67,85 @@ public static int p ;
 
         spinner.setOnItemSelectedListener(this);
     }
+    public int getCounterValue(){
+        return myPreferences.getInt("counter", 0);
+    }
+
+    public void increaseCounterValue() {
+        SharedPreferences.Editor editor = myPreferences.edit();
+        editor.putInt("counter", getCounterValue() + 1);
+        editor.commit();
+    }
+
+    public void setCounterValue(int value) {
+        SharedPreferences.Editor editor = myPreferences.edit();
+        editor.putInt("counter", value);
+        editor.commit();
+    }
+
+    public void loadBannerAd(){
+
+        // Kode uzerınden bır abnner ad view yaratıyoruz
+        BannerView bannerView = new BannerView(this);
+        // Ad Id: Sızın tekıl reklam idniz. Bu id sayesinde reklamın size ait oldugu anlasılıyor ve reklamla ılgılı ayarlar cekılıyor.
+        bannerView.setAdId("testw6vs28auh3");
+        // Reklamın Boyutunu ayarlıyoruz
+        bannerView.setBannerAdSize(BannerAdSize.BANNER_SIZE_DYNAMIC);
+
+        // Reklamın gosterileceği layouta erişiyoruz
+        LinearLayout rootView = findViewById(R.id.scndactivity);
+        // Reklam viewini bu layout içine ekliyoruz
+        rootView.addView(bannerView);
+
+
+        // Ads Parameter objesini olustur
+        AdParam adParam = new AdParam.Builder().build();
+        // Reklamın gosterılmesını tetıklıyoruz.
+        bannerView.loadAd(adParam);
+    }
+
+    private AdListener adListener = new AdListener() {
+        @Override
+        public void onAdLoaded() {
+            super.onAdLoaded();
+            Toast.makeText(SecondActivity.this, "Ad loaded", Toast.LENGTH_SHORT).show();
+            // Display an interstitial ad.
+            showInterstitial();
+        }
+
+        @Override
+        public void onAdFailed(int errorCode) {
+            Toast.makeText(SecondActivity.this, "Ad load failed with error code: " + errorCode,
+                    Toast.LENGTH_SHORT).show();
+            Log.d("TAG", "Ad load failed with error code: " + errorCode);
+        }
+
+        @Override
+        public void onAdClosed() {
+            super.onAdClosed();
+            Log.d("TAG", "onAdClosed");
+        }
+
+        @Override
+        public void onAdClicked() {
+            Log.d("TAG", "onAdClicked");
+            super.onAdClicked();
+        }
+
+        @Override
+        public void onAdOpened() {
+            Log.d("TAG", "onAdOpened");
+            super.onAdOpened();
+        }
+    };
+
+    private void showInterstitial() {
+        // Display an interstitial ad.
+        if (interstitialAd != null && interstitialAd.isLoaded()) {
+            interstitialAd.show();
+        } else {
+            Toast.makeText(this, "Ad did not load", Toast.LENGTH_SHORT).show();
+        }}
 
 
     @Override

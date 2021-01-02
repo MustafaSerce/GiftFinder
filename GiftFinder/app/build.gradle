@@ -1,4 +1,7 @@
 apply plugin: 'com.android.application'
+apply plugin: 'com.huawei.agconnect'
+
+
 
 android {
     compileSdkVersion 30
@@ -33,7 +36,8 @@ dependencies {
     testImplementation 'junit:junit:4.12'
     androidTestImplementation 'androidx.test.ext:junit:1.1.2'
     androidTestImplementation 'androidx.test.espresso:espresso-core:3.3.0'
-
+    implementation 'com.huawei.hms:ads-lite:13.4.35.300'
+    implementation 'com.huawei.hms:push:5.0.0.300'
         def room_version = "2.2.6"
 
         implementation "androidx.room:room-runtime:$room_version"
