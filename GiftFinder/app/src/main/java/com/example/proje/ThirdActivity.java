@@ -3,6 +3,7 @@ package com.example.proje;
 import android.content.SharedPreferences;
 import android.os.Bundle;
 import android.util.Log;
+import android.widget.AdapterView;
 import android.widget.LinearLayout;
 import android.widget.Toast;
 
@@ -29,9 +30,11 @@ import com.huawei.hms.ads.HwAds;
 import com.huawei.hms.ads.InterstitialAd;
 import com.huawei.hms.ads.banner.BannerView;
 
+import static com.example.proje.SecondActivity.p;
+import static com.example.proje.SecondActivity.px;
 
-public class ThirdActivity extends AppCompatActivity {
 
+public class ThirdActivity extends AppCompatActivity  {
 
 
     private RecyclerView recyclerView;
@@ -40,13 +43,13 @@ public class ThirdActivity extends AppCompatActivity {
     private RequestQueue mRequestQueue;
 
 
+
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.thirdactivity);
 
-
-
+        Toast.makeText(ThirdActivity.this,"p"+p,Toast.LENGTH_SHORT).show();
 
         recyclerView = findViewById(R.id.rw2);
         recyclerView.setHasFixedSize(true);
@@ -63,23 +66,75 @@ public class ThirdActivity extends AppCompatActivity {
 
 
     private void parseJSON() {
-        String url ="https://raw.githubusercontent.com/MustafaSerce/test/main/md.json";
+        String url ="https://raw.githubusercontent.com/ahmetsaiderdem/Resimler/main/deneme3232.json";
         JsonObjectRequest request = new JsonObjectRequest(Request.Method.GET, url, null,
+
+
+
+
                 new Response.Listener<JSONObject>() {
                     @Override
                     public void onResponse(JSONObject response) {
 
+                        JSONArray jsonArray;
+                        String ArrayName="";
+                        if (px==2&&p==3){
+                            p=6;
+                        }
+                        else if(px==2&&p==4){
+                            p=7;
+                        }
+
                         try {
-                            JSONArray jsonArray = response.getJSONArray("Gift");
+                                switch (p)
+                                {
+
+                                    case 2:
+                                        ArrayName="Gift1";
+                                        p=0;
+                                        px=0;
+
+                                        break;
+                                    case 3:
+                                        ArrayName="Gift3";
+                                        p=0;
+                                        px=0;
+                                        break;
+
+                                    case 4:
+                                        ArrayName="Gift2";
+                                        p=0;
+                                        px=0;
+                                        break;
+                                    case 5:
+                                        ArrayName="Gift5";
+                                        p=0;
+                                        px=0;
+                                        break;
+                                    case 6:
+                                        ArrayName="Gift4";
+                                        p=0;
+                                        px=0;
+                                        break;
+                                    case 7:
+                                        ArrayName="Gift6";
+                                        p=0;
+                                        px=0;
+                                        break;
+
+
+                                }
+                            jsonArray = response.getJSONArray(ArrayName);
                             for (int i =0; i <jsonArray.length();i++){
                                 JSONObject hit = jsonArray.getJSONObject(i);
 
                                 String Giftname =hit.getString("name");
                                 String iimageurl = hit.getString("url");
-
                                 mThirdActivityDesigns.add(new ThirdActivityDesign(iimageurl,Giftname));
 
                             }
+
+
                             mGiftAdapter = new GiftAdapter(ThirdActivity.this,mThirdActivityDesigns);
                             recyclerView.setAdapter(mGiftAdapter);
                         } catch (JSONException e) {

@@ -7,7 +7,7 @@ import com.huawei.hms.push.HmsMessageService;
 
 
 public class MyPushService extends HmsMessageService {
-
+//Adapter
     private static final String TAG = "MyPushService";
 
     @Override

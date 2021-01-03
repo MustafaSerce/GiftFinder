@@ -22,40 +22,19 @@
         <item>Diğer</item>
     </string-array>
     <string-array name="Cevap2">
-        <item>Cevap İçin Tıklayınız</item>
-        <item>Erkek</item>
-        <item>Kadın</item>
-    </string-array>
-    <string-array name="Cevap3">
         <item>Cevap için Tıklayınız</item>
-        <item>0-5</item>
-        <item>5-10</item>
-        <item>11-20</item>
-        <item>21-30</item>
-        <item>31-40</item>
-        <item>41-60</item>
-        <item>65-100</item>
+        <item>Kadın</item>
+        <item>Erkek</item>
+
 
     </string-array>
     <string-array name="Cevap4">
         <item>Cevap için Tıklayınız</item>
         <item>Spor</item>
-        <item>Film</item>
-        <item>Müzik</item>
+        <item>Eğlence</item>
         <item>Alışveriş</item>
-        <item>Oyun</item>
-
     </string-array>
-    <string-array name="cevap5">
-        <item>Cevap için Tıklayınız</item>
-        <item>0-100 TL</item>
-        <item>100-500 TL</item>
-        <item>500-1000 TL</item>
-        <item>1000-5000 TL</item>
-        <item>5000-10000 TL</item>
-        <item>Para Mühim Değil</item>
 
-    </string-array>
     <!-- TODO: Remove or change this placeholder text -->
     <string name="hello_blank_fragment">Hello blank fragment</string>
 

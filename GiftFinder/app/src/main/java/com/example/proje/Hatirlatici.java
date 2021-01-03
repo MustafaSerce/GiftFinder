@@ -11,7 +11,7 @@ import androidx.room.RoomDatabase;
 public class Hatirlatici extends AppCompatActivity {
     public static FragmentManager fragmentManager;
     public static UserDb userDb;
-
+// hatırlatıcı kısmı
     @Override
     protected void onCreate(@Nullable Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
