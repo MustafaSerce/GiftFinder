@@ -3,26 +3,31 @@
     xmlns:tools="http://schemas.android.com/tools"
     android:layout_width="match_parent"
     android:layout_height="match_parent"
+    android:background="@color/gri"
     tools:context=".HomeFragment">
 
     <!-- TODO: Update blank fragment layout -->
 
 
     <Button
-        android:id="@+id/btnadd"
+        android:id="@+id/buttonaddnote"
         android:layout_width="150dp"
         android:layout_height="wrap_content"
         android:layout_marginHorizontal="130dp"
         android:layout_marginTop="250dp"
-        android:text="Add NOTE" />
+        android:textColor="@color/kırmızı"
+        android:backgroundTint="@color/colorPrimaryDark"
+        android:text="@string/addNote" />
 
     <Button
-        android:id="@+id/btnview"
+        android:id="@+id/noteviewbutton"
         android:layout_width="150dp"
         android:layout_height="wrap_content"
         android:layout_marginHorizontal="130dp"
         android:layout_marginTop="370dp"
-        android:text="NOTES VİEWS" />
+        android:textColor="@color/kırmızı"
+        android:backgroundTint="@color/colorPrimaryDark"
+        android:text="@string/noteView" />
 
 
 </FrameLayout>

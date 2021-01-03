@@ -11,7 +11,7 @@ import android.widget.Button;
 
 
 public class HomeFragment extends Fragment implements View.OnClickListener{
-    private Button addbtn,btnlistele;
+    private Button buttonaddnote,noteviewbutton;
 
 
     public HomeFragment() {
@@ -28,11 +28,11 @@ public class HomeFragment extends Fragment implements View.OnClickListener{
         // Inflate the layout for this fragment
 
         View view = inflater.inflate(R.layout.fragment_home, container, false);
-        addbtn = view.findViewById(R.id.btnadd);
-        addbtn.setOnClickListener(this);
+        buttonaddnote = view.findViewById(R.id.buttonaddnote);
+        buttonaddnote.setOnClickListener(this);
 
-        btnlistele = view.findViewById(R.id.btnview);
-        btnlistele.setOnClickListener(this);
+        noteviewbutton = view.findViewById(R.id.noteviewbutton);
+        noteviewbutton.setOnClickListener(this);
 
         return view;
 
@@ -42,10 +42,10 @@ public class HomeFragment extends Fragment implements View.OnClickListener{
     @Override
     public void onClick(View view) {
         switch (view.getId()){
-            case R.id.btnadd:
+            case R.id.buttonaddnote:
             Hatirlatici.fragmentManager.beginTransaction().replace(R.id.fragment_container,new AddUserFragment()).addToBackStack(null).commit();
             break;
-            case R.id.btnview:
+            case R.id.noteviewbutton:
                 Hatirlatici.fragmentManager.beginTransaction().replace(R.id.fragment_container,new KisilerFragment()).addToBackStack(null).commit();
 
         }

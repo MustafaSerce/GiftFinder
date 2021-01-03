@@ -1,17 +1,12 @@
 package com.example.proje;
 
-import android.annotation.SuppressLint;
-import android.content.Context;
 import android.content.Intent;
 import android.content.SharedPreferences;
 import android.os.Bundle;
 import android.util.Log;
-import android.util.Range;
-import android.view.MotionEvent;
 import android.view.View;
 import android.widget.AdapterView;
 import android.widget.ArrayAdapter;
-import android.widget.Button;
 import android.widget.LinearLayout;
 import android.widget.Spinner;
 import android.widget.TextView;
@@ -31,7 +26,7 @@ public class SecondActivity extends AppCompatActivity implements AdapterView.OnI
 
     InterstitialAd interstitialAd;
     SharedPreferences myPreferences;
-TextView textView3;
+TextView questtext;
 Spinner spinner;
 public static int p=0 ;
 public static int px =0;
@@ -41,19 +36,14 @@ public static int px =0;
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.secondactivity);
-        textView3= findViewById(R.id.textView3);
+        questtext= findViewById(R.id.questiontitle);
 
 
-
-        // HMS Ads Servinin tetikliyoruz.
         HwAds.init(this);
-
-        // Banner Ad example
-
 
         myPreferences = getSharedPreferences("my_setting", MODE_PRIVATE);
         increaseCounterValue();
-        Toast.makeText(this, getCounterValue() + " kez actınız...", Toast.LENGTH_SHORT).show();
+
         if(getCounterValue() == 3) {
             interstitialAd = new InterstitialAd(this);
             interstitialAd.setAdId("testw6vs28auh3");
@@ -64,12 +54,12 @@ public static int px =0;
         }
         spinner = findViewById(R.id.spinner);
         ArrayAdapter<CharSequence> adapter = ArrayAdapter.createFromResource(this,
-                R.array.Cevap1, android.R.layout.simple_spinner_item);
+                R.array.reply1, android.R.layout.simple_spinner_item);
         adapter.setDropDownViewResource(android.R.layout.simple_spinner_dropdown_item);
         spinner.setAdapter(adapter);
 
         spinner.setOnItemSelectedListener(this);
-        Toast.makeText(SecondActivity.this,"p"+p,Toast.LENGTH_SHORT).show();
+
     }
     public int getCounterValue(){
         return myPreferences.getInt("counter", 0);
@@ -89,22 +79,12 @@ public static int px =0;
 
     public void loadBannerAd(){
 
-        // Kode uzerınden bır abnner ad view yaratıyoruz
         BannerView bannerView = new BannerView(this);
-        // Ad Id: Sızın tekıl reklam idniz. Bu id sayesinde reklamın size ait oldugu anlasılıyor ve reklamla ılgılı ayarlar cekılıyor.
         bannerView.setAdId("testw6vs28auh3");
-        // Reklamın Boyutunu ayarlıyoruz
         bannerView.setBannerAdSize(BannerAdSize.BANNER_SIZE_DYNAMIC);
-
-        // Reklamın gosterileceği layouta erişiyoruz
         LinearLayout rootView = findViewById(R.id.scndactivity);
-        // Reklam viewini bu layout içine ekliyoruz
         rootView.addView(bannerView);
-
-
-        // Ads Parameter objesini olustur
         AdParam adParam = new AdParam.Builder().build();
-        // Reklamın gosterılmesını tetıklıyoruz.
         bannerView.loadAd(adParam);
     }
 
@@ -113,7 +93,6 @@ public static int px =0;
         public void onAdLoaded() {
             super.onAdLoaded();
             Toast.makeText(SecondActivity.this, "Ad loaded", Toast.LENGTH_SHORT).show();
-            // Display an interstitial ad.
             showInterstitial();
         }
 
@@ -162,34 +141,26 @@ public static int px =0;
    int y = spinner.getCount();
 
        if ((y==5)&&((tx == 1 ) || (tx==2)||(tx==3)||(tx==4)||(tx==5))){
-
-            textView3.setText(R.string.soru2);
+            questtext.setText(R.string.question2);
            ArrayAdapter<CharSequence> adapter = ArrayAdapter.createFromResource(this,
-                   R.array.Cevap2, android.R.layout.simple_spinner_item);
+                   R.array.reply2, android.R.layout.simple_spinner_item);
            adapter.setDropDownViewResource(android.R.layout.simple_spinner_dropdown_item);
            spinner.setAdapter(adapter);
 
-
-           Toast.makeText(SecondActivity.this,"p"+p,Toast.LENGTH_SHORT).show();
         }
        else if ((y==3)&&( (tx==1)||(tx==2)||(tx==3))){
-           textView3.setText(R.string.soru4);
+           questtext.setText(R.string.question3);
            ArrayAdapter<CharSequence> adapter = ArrayAdapter.createFromResource(this,
-                   R.array.Cevap4, android.R.layout.simple_spinner_item);
+                   R.array.reply3, android.R.layout.simple_spinner_item);
            adapter.setDropDownViewResource(android.R.layout.simple_spinner_dropdown_item);
            spinner.setAdapter(adapter);
            px+=tx;
            p+=tx;
-
-           Toast.makeText(SecondActivity.this,"px"+px,Toast.LENGTH_SHORT).show();
        }
        else if ((y==4)&&( (tx==1)||(tx==2)||(tx==3))||(tx==4)){
            p+=tx;
-
-
            Intent gec = new Intent(SecondActivity.this,ThirdActivity.class);
            startActivity(gec);
-
        }
 
 
@@ -199,5 +170,6 @@ public static int px =0;
     public void onNothingSelected(AdapterView<?> parent) {
 
     }
+
 
 }

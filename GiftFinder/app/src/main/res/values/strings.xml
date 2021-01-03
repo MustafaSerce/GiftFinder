@@ -1,34 +1,33 @@
 <resources>
     <string name="app_name">Proje</string>
-    <string name="soru1">Hediyenizi Kim İçin Alıyorsunuz?</string>
-    <string name="soru2">Cinsiyet</string>
-    <string name="soru3">Yaş Aralığı</string>
-    <string name="soru4">Hoşuna Gidebileceği Şey Nedir ?</string>
-    <string name="soru5">Fiyat Aralığınız Nedir?</string>
-    <string name="HediyeniBul">Hediyeni Bul</string>
-    <string name="Hatırlaticiolustur">Hatırlatıcı Oluştur</string>
-    <string name="tarihekle">Tarih Ekleyiniz</string>
-    <string name="Devam_et">Devam Et</string>
-    <string name="Welcome">Hediyeni Seç</string>
-    <string name="hatirlaticiisim">İsim</string>
-    <string name="hatirlaticiekle">Listeye Kaydet</string>
-    <string name="listeyigör">Listeyi Gör</string>
+    <string name="question1">Hediyenizi Kim İçin Alıyorsunuz?</string>
+    <string name="question2">Cinsiyet</string>
+    <string name="question3">Hoşuna Gidebileceği Şey Nedir ?</string>
 
-    <string-array name="Cevap1">
+    <string name="ChooseYourGift">Hediyeni Bul</string>
+    <string name="CreateNote">Not Oluştur</string>
+    <string name="addDate">Tarih</string>
+
+    <string name="Welcome">Hediyeni Seç</string>
+    <string name="note">Not</string>
+    <string name="addNote">Not Ekle</string>
+    <string name="noteView">Notları Gör</string>
+
+    <string-array name="reply1">
         <item>Cevap için Tıklayınız</item>
         <item>Aile</item>
         <item>Arkadaş</item>
         <item>Eş</item>
         <item>Diğer</item>
     </string-array>
-    <string-array name="Cevap2">
+    <string-array name="reply2">
         <item>Cevap için Tıklayınız</item>
         <item>Kadın</item>
         <item>Erkek</item>
 
 
     </string-array>
-    <string-array name="Cevap4">
+    <string-array name="reply3">
         <item>Cevap için Tıklayınız</item>
         <item>Spor</item>
         <item>Eğlence</item>

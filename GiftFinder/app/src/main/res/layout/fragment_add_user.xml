@@ -4,29 +4,33 @@
     xmlns:android="http://schemas.android.com/apk/res/android"
     android:layout_width="match_parent"
     android:layout_height="match_parent"
-    tools:context=".AddUserFragment">
+    tools:context=".AddUserFragment"
+    android:background="@color/gri">
 
     <!-- TODO: Update blank fragment layout -->
 
     <TextView
-        android:id="@+id/txtwc"
-        android:layout_width="183dp"
-        android:layout_height="55dp"
-        android:text="Eklemek İstediğiniz Kişinin Bilgilerini Giriniz"
+        android:id="@+id/titletext"
+        android:layout_width="248dp"
+        android:layout_height="84dp"
         android:gravity="center"
+        android:text="Notunuzu saklamak için bir isim ve tarih verin"
+        android:textColor="@color/kırmızı"
+        android:textSize="20dp"
         android:textStyle="bold|italic"
         app:layout_constraintBottom_toBottomOf="parent"
         app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintHorizontal_bias="0.506"
         app:layout_constraintStart_toStartOf="parent"
         app:layout_constraintTop_toTopOf="parent"
-        app:layout_constraintVertical_bias="0.138" />
+        app:layout_constraintVertical_bias="0.17000002" />
 
     <EditText
-        android:id="@+id/nametxt"
+        android:id="@+id/notetext"
         android:layout_width="195dp"
         android:layout_height="55dp"
-        android:hint="İsim"
+        android:hint="@string/note"
+        android:textColorHint="@color/kırmızı"
         app:layout_constraintBottom_toBottomOf="parent"
         app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintHorizontal_bias="0.495"
@@ -35,10 +39,12 @@
         app:layout_constraintVertical_bias="0.341" />
 
     <Button
-        android:id="@+id/savebtn"
+        android:id="@+id/addnotebutton"
         android:layout_width="168dp"
         android:layout_height="59dp"
-        android:text="OLUŞTUR"
+        android:text="@string/addNote"
+        android:textColor="@color/kırmızı"
+        android:backgroundTint="@color/colorPrimaryDark"
         app:layout_constraintBottom_toBottomOf="parent"
         app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintHorizontal_bias="0.497"
@@ -47,12 +53,13 @@
         app:layout_constraintVertical_bias="0.562" />
 
     <EditText
-        android:id="@+id/tarihtxt"
+        android:id="@+id/datetext"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
         android:ems="10"
-        android:hint="Tarih İçin İki Kez Dokun"
+        android:hint="@string/addDate"
         android:inputType=""
+        android:textColorHint="@color/kırmızı"
         android:editable="false"
         android:freezesText="true"
         app:layout_constraintBottom_toBottomOf="parent"

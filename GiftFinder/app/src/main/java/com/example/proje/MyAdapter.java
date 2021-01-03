@@ -48,7 +48,7 @@ public class MyAdapter extends RecyclerView.Adapter<MyAdapter.MyViewHolder> {
     @Override
     public void onBindViewHolder(@NonNull final MyViewHolder holder, int position) {
 
-        holder.btn.setText("No : "+d3[position]+" "+"Note : "+d1[position]+" "+"Date : "+d2[position]);
+        holder.btn.setText("Note : "+d1[position]+" "+"Date : "+d2[position]);
         holder.btn.setId(d3[position]);
 
         }
@@ -66,7 +66,7 @@ public class MyAdapter extends RecyclerView.Adapter<MyAdapter.MyViewHolder> {
 
         public MyViewHolder(@NonNull  View itemView) {
             super(itemView);
-            btn = itemView.findViewById(R.id.txt1);
+            btn = itemView.findViewById(R.id.noteitemtext);
 
 
 

@@ -14,27 +14,27 @@ import android.widget.TextView;
 
 public class MainActivity extends AppCompatActivity {
 
-    Button btnbul,btnhatir;
+    Button createGiftButton,chooseGiftButton;
 
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_main);
-        btnbul = findViewById(R.id.btnbul);
-        btnhatir=findViewById(R.id.btnhatir);
+        chooseGiftButton = findViewById(R.id.chooseGiftButton);
+        createGiftButton = findViewById(R.id.CreateNoteButton);
 
 
 
 
-        btnbul.setOnClickListener(new View.OnClickListener() {
+        chooseGiftButton.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View v) {
                 Intent gec = new Intent(MainActivity.this, SecondActivity.class);
                 startActivity(gec);
             }
         });
-        btnhatir.setOnClickListener(new View.OnClickListener() {
+        createGiftButton.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View v) {
                 Intent gec = new Intent(MainActivity.this,Hatirlatici.class);

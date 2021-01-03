@@ -1,11 +1,6 @@
 package com.example.proje;
 
-import android.content.SharedPreferences;
 import android.os.Bundle;
-import android.util.Log;
-import android.widget.AdapterView;
-import android.widget.LinearLayout;
-import android.widget.Toast;
 
 import androidx.appcompat.app.AppCompatActivity;
 import androidx.recyclerview.widget.LinearLayoutManager;
@@ -23,12 +18,6 @@ import org.json.JSONException;
 import org.json.JSONObject;
 
 import java.util.ArrayList;
-import com.huawei.hms.ads.AdListener;
-import com.huawei.hms.ads.AdParam;
-import com.huawei.hms.ads.BannerAdSize;
-import com.huawei.hms.ads.HwAds;
-import com.huawei.hms.ads.InterstitialAd;
-import com.huawei.hms.ads.banner.BannerView;
 
 import static com.example.proje.SecondActivity.p;
 import static com.example.proje.SecondActivity.px;
@@ -49,7 +38,7 @@ public class ThirdActivity extends AppCompatActivity  {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.thirdactivity);
 
-        Toast.makeText(ThirdActivity.this,"p"+p,Toast.LENGTH_SHORT).show();
+
 
         recyclerView = findViewById(R.id.rw2);
         recyclerView.setHasFixedSize(true);

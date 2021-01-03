@@ -16,50 +16,41 @@ import android.widget.Toast;
 import androidx.fragment.app.Fragment;
 
 import java.util.Calendar;
-import java.util.concurrent.TimeUnit;
 
 
 
 public class AddUserFragment extends Fragment {
-private EditText nametxt,tarhitxt;
-private Button savebtn;
-private  TextView txtwc;
 
 
 
-    private TextView txtcalender;
-    DatePickerDialog.OnDateSetListener setListener;
+private EditText dateText,noteText;
+private Button addNoteButton;
+DatePickerDialog.OnDateSetListener setListener;
 
 
     public AddUserFragment() {
-        // Required empty public constructor
+
     }
 
     @Override
     public View onCreateView(LayoutInflater inflater, ViewGroup container,
                              Bundle savedInstanceState) {
-        // Inflate the layout for this fragment
-        final View view = inflater.inflate(R.layout.fragment_add_user, container, false);
-        nametxt = view.findViewById(R.id.nametxt);
-        tarhitxt = view.findViewById(R.id.tarihtxt);
-        txtwc = view.findViewById(R.id.txtwc);
+
+        View view = inflater.inflate(R.layout.fragment_add_user, container, false);
+        noteText = view.findViewById(R.id.notetext);
+        dateText = view.findViewById(R.id.datetext);
+
+        addNoteButton = view.findViewById(R.id.addnotebutton);
 
 
 
 
 
-
-        final StringBuilder sonuc2 = new StringBuilder();
-
-
-         final Calendar c = Calendar.getInstance();
-         final int year = c.get(Calendar.YEAR);
-         final int month = c.get(Calendar.MONTH);
-         final int day = c.get(Calendar.DAY_OF_MONTH);
-
-
-
-        tarhitxt.setOnClickListener(new View.OnClickListener() {
+        dateText.setOnClickListener(new View.OnClickListener() {
+            Calendar c = Calendar.getInstance();
+            int year = c.get(Calendar.YEAR);
+            int month = c.get(Calendar.MONTH);
+            int day = c.get(Calendar.DAY_OF_MONTH);
             @Override
             public void onClick(View v) {
                 DatePickerDialog datePickerDialog = new DatePickerDialog(
@@ -73,58 +64,49 @@ private  TextView txtwc;
             @Override
             public void onDateSet(DatePicker view, int year, int month, int dayOfMonth) {
 
+                StringBuilder sonuc2 = new StringBuilder();
                 Calendar cx = Calendar.getInstance();
                 cx.set(year,month,dayOfMonth);
                 sonuc2.append(year).append("-").append(month+1).append("-").append(dayOfMonth);
 
 
 
-                tarhitxt.setText("");
-                tarhitxt.setText(sonuc2);
+                dateText.setText("");
+                dateText.setText(sonuc2);
 
 
-                long diffInMillisec =cx.getTimeInMillis() - c.getTimeInMillis();
+              /*  long diffInMillisec =cx.getTimeInMillis() - c.getTimeInMillis();
                 long diffInDays = TimeUnit.MILLISECONDS.toDays(diffInMillisec);
                 long diffInHours = TimeUnit.MILLISECONDS.toHours(diffInMillisec);
                 long diffInMin = TimeUnit.MILLISECONDS.toMinutes(diffInMillisec);
                 long diffInSec = TimeUnit.MILLISECONDS.toSeconds(diffInMillisec);
                 final String cıktı2 = String.format("%S",diffInMillisec);
                 txtwc.setText(cıktı2);
-                int pushtime = (int) diffInMillisec;
+                int pushtime = (int) diffInMillisec;*/
 
-                //FARK 604800000 (7 GÜN) oldugunda pushlayacak.
+                //FARK 604800000 (7 GÜN) oldugunda pushlayacaktı :(.
             }
 
         };
 
-        savebtn = view.findViewById(R.id.savebtn);
-        savebtn.setOnClickListener(new View.OnClickListener() {
+
+
+        addNoteButton.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View v) {
-                String username = nametxt.getText().toString();
-                String userdate =  tarhitxt.getText().toString();
+                    String username = noteText.getText().toString();
+                    String userdate = dateText.getText().toString();
 
+                    User user = new User();
+                    user.setName(username);
+                    user.setDate(userdate);
+                    Hatirlatici.userDb.userDao().addUser(user);
+                    Toast.makeText(getActivity(), "Başarıyla Eklendi", Toast.LENGTH_SHORT).show();
 
-                User user = new User();
-                user.setName(username);
-                user.setDate(userdate);
-                Hatirlatici.userDb.userDao().addUser(user);
-                Toast.makeText(getActivity(),"Başarıyla Eklendi",Toast.LENGTH_SHORT).show();
-
-                nametxt.setText("");
-                tarhitxt.setText("");
-
-
-            }
+                    noteText.setText("");
+                    dateText.setText("");
+                }
         });
         return view;
-
-
-
-
-
-
     }
-
-
     }

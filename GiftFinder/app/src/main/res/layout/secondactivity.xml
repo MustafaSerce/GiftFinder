@@ -5,29 +5,29 @@
     android:layout_height="match_parent"
     android:paddingLeft="16dp"
     android:paddingRight="16dp"
-    android:background="@color/kırmızı"
+    android:background="@color/gri"
     android:orientation="vertical" >
 
     <TextView
-        android:id="@+id/textView3"
-        android:layout_width="245dp"
-        android:layout_height="38dp"
-        android:text="@string/soru1"
-        android:textSize="16dp"
-        android:textStyle="bold|italic"
-        android:layout_marginTop="100dp"
+        android:id="@+id/questiontitle"
+        android:layout_width="284dp"
+        android:layout_height="54dp"
         android:layout_marginLeft="50dp"
-        ></TextView>
+        android:layout_marginTop="100dp"
+        android:text="@string/question1"
+        android:textColor="@color/kırmızı"
+        android:textSize="16dp"
+        android:textStyle="bold|italic"></TextView>
 
 
     <Spinner
         android:id="@+id/spinner"
-        android:layout_width="332dp"
-        android:layout_height="68dp"
-        android:textSize="16dp"
-        android:textStyle="bold|italic"
+        android:layout_width="343dp"
+        android:layout_height="88dp"
         android:layout_marginLeft="20dp"
-        android:layout_marginTop="50dp"></Spinner>
+        android:layout_marginTop="50dp"
+        android:textSize="16dp"
+        android:textStyle="bold|italic"></Spinner>
 
 
 
