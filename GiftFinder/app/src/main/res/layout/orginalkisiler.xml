@@ -26,20 +26,17 @@
             <Button
                 android:id="@+id/noteitemtext"
                 android:layout_width="0dp"
-                android:layout_height="60dp"
+                android:layout_height="74dp"
                 android:background="@color/kırmızı"
-                android:gravity="center|left"
+                android:gravity="center"
                 android:text="anlamadım"
                 android:textColor="@color/gri"
-                android:textSize="17dp"
+                android:textSize="14dp"
                 android:textStyle="bold"
                 app:layout_constraintBottom_toBottomOf="parent"
                 app:layout_constraintEnd_toEndOf="parent"
                 app:layout_constraintStart_toStartOf="parent"
                 app:layout_constraintTop_toTopOf="parent" />
-
-
-
 
 
         </androidx.constraintlayout.widget.ConstraintLayout>
